@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace ClassDemoConfigogLog
 {
@@ -31,6 +32,16 @@ namespace ClassDemoConfigogLog
                 port = Convert.ToInt32(portTxt);
             }
 
+
+            XmlNode? ImNullXml = configXML.DocumentElement.SelectSingleNode("IamNull");
+            if (ImNullXml == null || ImNullXml.Attributes["xsi:nil"]?.Value == "true")
+            {
+                Console.WriteLine("i am null");
+            }
+            else
+            {
+                Console.WriteLine("text::" + ImNullXml.InnerText.Trim() + "::");
+            }
 
             Console.WriteLine("Name is " + name + " the port number is " + port);
         }

@@ -3,9 +3,9 @@ using ClassDemoConfigogLog;
 
 Console.WriteLine("Hello, World!");
 
-ReadConfig cnf = new ReadConfig();
-cnf.Start();
+//ReadConfig cnf = new ReadConfig();
+//cnf.Start();
 
-//LoggingClass log = new LoggingClass();
-//log.Start();
+LoggingClass log = new LoggingClass();
+log.Start();
 
